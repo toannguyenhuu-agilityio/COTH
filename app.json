@@ -13,7 +13,18 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "entitlements": {
+        "com.apple.security.application-groups": [
+          "group..expowidgets"
+        ],
+        "aps-environment": "development"
+      },
+      "infoPlist": {
+        "NSSupportsLiveActivities": false,
+        "NSSupportsLiveActivitiesFrequentUpdates": false
+      },
+      "bundleIdentifier": "com.anonymous.COTH"
     },
     "android": {
       "adaptiveIcon": {
@@ -21,10 +32,37 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.coth.dev"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "@bittingz/expo-widgets",
+        {
+          "ios": {
+            "src": "./widgets/ios",
+            "mode": "development",
+            "moduleDependencies": [
+              "MyData.swift",
+              "LogHandler.swift"
+            ]
+          },
+          "android": {
+            "src": "./widgets/android",
+            "packageName": "com.coth.dev",
+            "widgets": [
+              {
+                "name": "SampleWidget",
+                "resourceName": "@xml/sample_widget_info"
+              }
+            ]
+          }
+        }
+      ],
+      "expo-secure-store"
+    ]
   }
 }
