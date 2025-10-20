@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
-import { useAuth } from '@/hooks';
+import { useAuthStore } from '@/stores';
 
 export const ProfileScreen = () => {
-  const { logout, user } = useAuth();
+  const { logout, user } = useAuthStore();
 
   return (
     <View style={styles.container}>

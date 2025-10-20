@@ -3,13 +3,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { AppNavigator } from './AppNavigator';
 import { AuthNavigator } from './AuthNavigator';
-import { useAuth } from '@/hooks';
 import { SplashScreen } from '@/screens/auth';
+import { useAuthStore } from '@/stores';
 
 const RootStack = createNativeStackNavigator();
 
 export const RootNavigator = () => {
-  const { user, loading } = useAuth();
+  const { user, loading } = useAuthStore();
 
   return (
     <NavigationContainer>

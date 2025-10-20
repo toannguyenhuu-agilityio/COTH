@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
-import { useAuth } from '@/hooks';
+import { useAuthStore } from '@/stores';
 
 export const SignupScreen = () => {
-  const { signup } = useAuth();
+  const { signup } = useAuthStore();
 
   const handleSignup = async () => {
     await signup('newuser@example.com', 'password123', 'New User');

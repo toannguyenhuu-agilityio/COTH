@@ -1,10 +1,19 @@
 import { RootNavigator } from '@/navigation';
-import { AuthProvider } from '@/context';
+import { useEffect } from 'react';
+import { useAuthStore } from '@/stores';
+import { QueryClientProvider } from '@tanstack/react-query';
+import { queryClient } from '@/lib';
 
 export default function App() {
+  const loadStoredUser = useAuthStore((state) => state.loadStoredUser);
+
+  useEffect(() => {
+    loadStoredUser();
+  }, []);
+
   return (
-    <AuthProvider>
+    <QueryClientProvider client={queryClient}>
       <RootNavigator />
-    </AuthProvider>
+    </QueryClientProvider>
   );
 }
