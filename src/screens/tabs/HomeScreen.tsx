@@ -1,10 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { ImagePickerExample } from '@/components';
 
 export const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Home Screen</Text>
+      <ImagePickerExample />
     </View>
   );
 };

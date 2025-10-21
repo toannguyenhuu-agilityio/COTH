@@ -20,7 +20,10 @@
       },
       "infoPlist": {
         "NSSupportsLiveActivities": false,
-        "NSSupportsLiveActivitiesFrequentUpdates": false
+        "NSSupportsLiveActivitiesFrequentUpdates": false,
+        "NSCameraUsageDescription": "Allow COTH to use your camera to take photos.",
+        "NSPhotoLibraryUsageDescription": "Allow COTH to access your photo library to select images.",
+        "NSPhotoLibraryAddUsageDescription": "Allow COTH to save photos to your library."
       },
       "bundleIdentifier": "com.coth.dev"
     },
